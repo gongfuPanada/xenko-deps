@@ -1,0 +1,8 @@
+data/*
+*.suo
+*.vcxproj.user
+*.sdf
+*.obj
+*.pch
+*.tlog
+*.vspscc
