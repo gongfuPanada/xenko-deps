@@ -1,3 +1,5 @@
+#ifdef DEBUG
+
 /******************************************************************************
 
  @File         PVRTString.cpp
@@ -1416,3 +1418,4 @@ CPVRTString PVRTStringFromFormattedStr(const char *pFormat, ...)
  End of file (PVRTString.cpp)
 *****************************************************************************/
 
+#endif // DEBUG
