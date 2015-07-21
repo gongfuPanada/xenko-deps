@@ -4,6 +4,25 @@
         <name>SharpFont</name>
     </assembly>
     <members>
+        <member name="T:SharpFont.Internal.NativeReference`1">
+            <summary>
+            Struct NativeReference
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:SharpFont.Internal.NativeReference`1.#ctor(System.IntPtr)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpFont.Internal.NativeReference`1"/> struct.
+            </summary>
+            <param name="memoryPtr">The memory PTR.</param>
+        </member>
+        <member name="M:SharpFont.Internal.NativeReference`1.op_Implicit(`0)~SharpFont.Internal.NativeReference{`0}">
+            <summary>
+            Performs an implicit conversion from <see cref="T:SharpFont.Memory"/> to <see cref="T:SharpFont.Internal.NativeReference`1"/>.
+            </summary>
+            <param name="memory">The memory.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:SharpFont.AutoHinterScript">
             <summary>
             A list of constants used for the glyph-to-script-map property to specify the script submodule the auto-hinter

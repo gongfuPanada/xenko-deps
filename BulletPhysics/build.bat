@@ -16,6 +16,9 @@ mkdir WindowsStore\x64
 mkdir WindowsStore\ARM
 mkdir WindowsPhone\x86
 mkdir WindowsPhone\ARM
+mkdir Windows10\x86
+mkdir Windows10\x64
+mkdir Windows10\ARM
 
 copy ..\..\externals\bullet2-sharp-mobile\src\build\bulletc\Windows\x86\Release\*.dll Windows\x86
 copy ..\..\externals\bullet2-sharp-mobile\src\build\bulletc\Windows\x64\Release\*.dll Windows\x64
@@ -24,6 +27,9 @@ copy ..\..\externals\bullet2-sharp-mobile\src\build\bulletc\WindowsStore\x64\Rel
 copy ..\..\externals\bullet2-sharp-mobile\src\build\bulletc\WindowsStore\ARM\Release\*.dll WindowsStore\ARM
 copy ..\..\externals\bullet2-sharp-mobile\src\build\bulletc\WindowsPhone\x86\Release\*.dll WindowsPhone\x86
 copy ..\..\externals\bullet2-sharp-mobile\src\build\bulletc\WindowsPhone\ARM\Release\*.dll WindowsPhone\ARM
+copy ..\..\externals\bullet2-sharp-mobile\src\build\bulletc\Windows10\x86\Release\*.dll Windows10\x86
+copy ..\..\externals\bullet2-sharp-mobile\src\build\bulletc\Windows10\x64\Release\*.dll Windows10\x64
+copy ..\..\externals\bullet2-sharp-mobile\src\build\bulletc\Windows10\ARM\Release\*.dll Windows10\ARM
 
 GOTO :end
 :error_popd
