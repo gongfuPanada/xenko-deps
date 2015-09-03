@@ -1,6 +1,6 @@
 set SiliconStudioNativeTarget="..\..\..\..\..\sources\common\core\SiliconStudio.Core.Native\SiliconStudioNative.targets"
 
-call "%ProgramFiles(x86)%\Microsoft Visual Studio 12.0\vc\vcvarsall.bat" x86
+call "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\vc\vcvarsall.bat" x86
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=Windows;Platform=Win32
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=Windows;Platform=x64
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=WindowsStore;Platform=x64
@@ -8,6 +8,9 @@ msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Propert
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=WindowsStore;Platform=ARM
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=WindowsPhone;Platform=Win32
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=WindowsPhone;Platform=ARM
+msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=Windows10;Platform=x64
+msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=Windows10;Platform=Win32
+msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=Windows10;Platform=ARM
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Release;SiliconStudioPlatform=Windows;Platform=Win32
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Release;SiliconStudioPlatform=Windows;Platform=x64
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Release;SiliconStudioPlatform=WindowsStore;Platform=x64
@@ -15,13 +18,6 @@ msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Propert
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Release;SiliconStudioPlatform=WindowsStore;Platform=ARM
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Release;SiliconStudioPlatform=WindowsPhone;Platform=Win32
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Release;SiliconStudioPlatform=WindowsPhone;Platform=ARM
-
-call "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\vc\vcvarsall.bat" x86
-@REM These variables are set by VCVarsQueryRegistry.bat and need to be cleared (as of VS2015 RC)
-@set WindowsSdkDir=
-msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=Windows10;Platform=x64
-msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=Windows10;Platform=Win32
-msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Debug;SiliconStudioPlatform=Windows10;Platform=ARM
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Release;SiliconStudioPlatform=Windows10;Platform=x64
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Release;SiliconStudioPlatform=Windows10;Platform=Win32
 msbuild ..\..\externals\freetype\builds\windows\vc2013\freetype.vcxproj /Property:SiliconStudioNativeTarget=%SiliconStudioNativeTarget%;Configuration=Release;SiliconStudioPlatform=Windows10;Platform=ARM
