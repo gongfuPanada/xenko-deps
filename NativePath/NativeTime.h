@@ -21,37 +21,16 @@ THE SOFTWARE.
 */
 
 //
-//  NativeMemory.h
+//  NativeTime.h
 //  NativePath
 //
-//  Created by Giovanni Petrantoni on 11/18/15.
+//  Created by Giovanni Petrantoni on 11/28/15.
 //  Copyright © 2015 Giovanni Petrantoni. All rights reserved.
 //
 
-#ifndef NativeMemory_h
-#define NativeMemory_h
+#ifndef NativeTime_h
+#define NativeTime_h
 
-#define size_t unsigned int
+extern double npSeconds();
 
-extern void* npMalloc(size_t size);
-#define malloc npMalloc
-
-extern void npFree(void* block);
-#define free npFree
-
-extern void* npMemmove(void* dest, const void* src, size_t count);
-#define memmove npMemmove
-
-extern void* npMemcpy(void *dest, const void *src, size_t count);
-#define memcpy npMemcpy
-
-extern void* npMemset(void *dest, int ch, size_t count);
-#define memset npMemset
-
-extern int npMemcmp(const void* lhs,const void* rhs, size_t count);
-#define memcmp npMemcmp
-
-extern void* npMemchr(const void* ptr, int ch, size_t count);
-#define memchr npMemchr
-
-#endif /* NativeMemory_h */
+#endif /* NativeTime_h */
