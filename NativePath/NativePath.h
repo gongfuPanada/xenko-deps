@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015 Giovanni Petrantoni
+Copyright (c) 2015-2016 Giovanni Petrantoni
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -31,39 +31,108 @@ THE SOFTWARE.
 #ifndef nativepath_h
 #define nativepath_h
 
+//avoid MS stuff
+#ifdef _MSC_VER
+#undef _MSC_VER
+#endif
+
 //from clang lib/Headers/stdint.h
 
-#ifdef __INT64_TYPE__
 typedef __INT64_TYPE__ int64_t;
 typedef __UINT64_TYPE__ uint64_t;
-#endif /* __INT64_TYPE__ */
 
-#ifdef __INT32_TYPE__
 typedef __INT32_TYPE__ int32_t;
 typedef __UINT32_TYPE__ uint32_t;
-#endif /* __INT32_TYPE__ */
 
-#ifdef __INT16_TYPE__
 typedef __INT16_TYPE__ int16_t;
 typedef __UINT16_TYPE__ uint16_t;
-#endif /* __INT16_TYPE__ */
 
-#ifdef __INT8_TYPE__
 typedef __INT8_TYPE__ int8_t;
 typedef __UINT8_TYPE__ uint8_t;
-#endif /* __INT8_TYPE__ */
 
-//type safeguard, if type sizes are not what we expect it the compiler will throw error
+typedef __PTRDIFF_TYPE__ ptrdiff_t;
+
+typedef __SIZE_TYPE__ size_t;
+
+typedef char char8_t;
+
+#define CHAR_BIT  __CHAR_BIT__
+#define INT_MAX   __INT_MAX__
+#define INT_MIN   (-__INT_MAX__  -1)
+
+#define LONG_MAX  __LONG_MAX__
+#define LONG_MIN  (-__LONG_MAX__ -1L)
+
+/* Characteristics of floating point types, C99 5.2.4.2.2 */
+
+#define FLT_EVAL_METHOD __FLT_EVAL_METHOD__
+#define FLT_ROUNDS (__builtin_flt_rounds())
+#define FLT_RADIX __FLT_RADIX__
+
+#define FLT_MANT_DIG __FLT_MANT_DIG__
+#define DBL_MANT_DIG __DBL_MANT_DIG__
+#define LDBL_MANT_DIG __LDBL_MANT_DIG__
+
+#define DECIMAL_DIG __DECIMAL_DIG__
+
+#define FLT_DIG __FLT_DIG__
+#define DBL_DIG __DBL_DIG__
+#define LDBL_DIG __LDBL_DIG__
+
+#define FLT_MIN_EXP __FLT_MIN_EXP__
+#define DBL_MIN_EXP __DBL_MIN_EXP__
+#define LDBL_MIN_EXP __LDBL_MIN_EXP__
+
+#define FLT_MIN_10_EXP __FLT_MIN_10_EXP__
+#define DBL_MIN_10_EXP __DBL_MIN_10_EXP__
+#define LDBL_MIN_10_EXP __LDBL_MIN_10_EXP__
+
+#define FLT_MAX_EXP __FLT_MAX_EXP__
+#define DBL_MAX_EXP __DBL_MAX_EXP__
+#define LDBL_MAX_EXP __LDBL_MAX_EXP__
+
+#define FLT_MAX_10_EXP __FLT_MAX_10_EXP__
+#define DBL_MAX_10_EXP __DBL_MAX_10_EXP__
+#define LDBL_MAX_10_EXP __LDBL_MAX_10_EXP__
+
+#define FLT_MAX __FLT_MAX__
+#define DBL_MAX __DBL_MAX__
+#define LDBL_MAX __LDBL_MAX__
+
+#define FLT_EPSILON __FLT_EPSILON__
+#define DBL_EPSILON __DBL_EPSILON__
+#define LDBL_EPSILON __LDBL_EPSILON__
+
+#define FLT_MIN __FLT_MIN__
+#define DBL_MIN __DBL_MIN__
+#define LDBL_MIN __LDBL_MIN__
+
+#define __stdint_join3(a,b,c) a ## b ## c
+
+#define  __intn_t(n) __stdint_join3( int, n, _t)
+#define __uintn_t(n) __stdint_join3(uint, n, _t)
+
+typedef  __intn_t(__INTPTR_WIDTH__)  intptr_t;
+typedef __uintn_t(__INTPTR_WIDTH__) uintptr_t;
+
+//type safeguard, if type sizes are not what we expect, the compiler will throw error
 static union
 {
 	char int_incorrect[sizeof(int) == 4 ? 1 : -1];
 	char int64_incorrect[sizeof(int64_t) == 8 ? 1 : -1];
 	char int32_incorrect[sizeof(int32_t) == 4 ? 1 : -1];
+	char short_incorrect[sizeof(short) == 2 ? 1 : -1];
 	char int16_incorrect[sizeof(int16_t) == 2 ? 1 : -1];
 	char int8_incorrect[sizeof(int8_t) == 1 ? 1 : -1];
 	char float_incorrect[sizeof(float) == 4 ? 1 : -1];
 	char double_incorrect[sizeof(double) == 8 ? 1 : -1];
 } __types_safeguard;
+
+#define NULL 0
+
+//utility
+#define tolower(__x__) __x__ //TODO
+#define toupper(__x__) __x__ //TODO
 
 //Vectors
 
@@ -3028,5 +3097,6 @@ typedef uint32_t uint4 __attribute__((vector_size(VECTOR_BYTES), aligned(VECTOR_
 #include <NativeMemory.h>
 #include <NativeTime.h>
 #include <NativeDynamicLinking.h>
+#include <NativeSIMD.h>
 
 #endif /* nativepath_h */

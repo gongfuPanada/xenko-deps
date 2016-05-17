@@ -31,12 +31,27 @@ THE SOFTWARE.
 #ifndef NativeMemory_h
 #define NativeMemory_h
 
-#define size_t uint32_t
+#include <NativePath.h>
+
+typedef __SIZE_TYPE__ size_t;
 
 extern void* npMalloc(size_t size);
 #define malloc npMalloc
 
 extern void npFree(void* block);
 #define free npFree
+
+extern void* npRealloc(void* ptr, size_t size);
+#define realloc npRealloc
+
+extern size_t npMallocSize(void* ptr);
+#define malloc_size npMallocSize
+
+inline void* calloc(size_t num, size_t size)
+{
+    void* buf = malloc(num*size);
+    memset(buf, 0x0, num*size);
+    return buf;
+}
 
 #endif /* NativeMemory_h */
