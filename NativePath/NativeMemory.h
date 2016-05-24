@@ -31,9 +31,11 @@ THE SOFTWARE.
 #ifndef NativeMemory_h
 #define NativeMemory_h
 
-#include <NativePath.h>
+#include "NativePath.h"
 
-typedef __SIZE_TYPE__ size_t;
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 extern void* npMalloc(size_t size);
 #define malloc npMalloc
@@ -53,5 +55,9 @@ inline void* calloc(size_t num, size_t size)
     memset(buf, 0x0, num*size);
     return buf;
 }
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* NativeMemory_h */
