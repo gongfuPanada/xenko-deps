@@ -2,6 +2,7 @@
 #define stdlib_h
 
 #include "../NativePath.h"
+#include "../NativeMemory.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -9,6 +10,7 @@ extern "C" {
 
 //TODO more stdlib stuff
 
+#undef exit
 #define exit npExit
 
 extern void npExit(int code);
