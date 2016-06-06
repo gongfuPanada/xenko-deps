@@ -8,13 +8,13 @@ copy /Y ..\..\externals\opentk\Binaries\OpenTK\Release\OpenTK.GLControl.dll .
 copy /Y ..\..\externals\opentk\Binaries\OpenTK\Release\OpenTK.GLControl.pdb .
 
 REM Android
-msbuild ..\..\externals\opentk\Projects\OpenTK.Android\OpenTK.Android.sln /Property:Configuration=Release;Platform="Any CPU"
+msbuild ..\..\externals\opentk\OpenTK.Android.sln /Property:Configuration=Release;Platform="Any CPU"
 mkdir Android
 copy /Y ..\..\externals\opentk\Binaries\Android\Release\OpenTK-1.1.dll Android
 copy /Y ..\..\externals\opentk\Binaries\Android\Release\OpenTK-1.1.dll.mdb Android
 
 REM iOS
-msbuild ..\..\externals\opentk\Projects\OpenTK.iOS\OpenTK.iOS.sln /Property:Configuration=Release;Platform="Any CPU"
+msbuild ..\..\externals\opentk\OpenTK.iOS.sln /Property:Configuration=Release;Platform="Any CPU"
 mkdir iOS
 copy /Y ..\..\externals\opentk\Binaries\iOS\Release\OpenTK-1.1.dll iOS
 copy /Y ..\..\externals\opentk\Binaries\iOS\Release\OpenTK-1.1.dll.mdb iOS
